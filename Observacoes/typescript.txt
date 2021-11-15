@@ -1,0 +1,45 @@
+/** TIPAGEM NO TYPESCRIPT
+ * nomeDaVariavel : tipoDaVariavel
+ * - O Typescript só é usado em ambientes de desenvolvimento, para produçao é necessario converter o codigo para Javascript
+ */
+
+/* *** Exemplo 1 - Tipagem *****************************************************************
+
+function enviarEmail(nome:string, email:string, telefone:string){
+    console.log(`Olá ${nome}, seu email é ${email} e seu telefone é ${telefone}`);
+};
+
+enviarEmail("Daniele", "dani@dani.com.br", "11112222");
+*/
+
+/* *** Exemplo 2 - interface *****************************************************************
+
+interface Usuario {
+    nome: string, email: string, telefone: string
+}
+
+function enviarEmail(user: Usuario ){
+    console.log(`Olá ${nome}, seu email é ${email} e seu telefone é ${telefone}`);
+};
+
+enviarEmail("Daniele", "dani@dani.com.br", "11112222");
+*/
+
+/** *** Exemplo 3 - Destruturaçao da interface *****************************************************************
+ * telefone?: string -> torna o parametro telefone opcional 
+ * */  
+
+interface Usuario {
+    nome: string, email: string, telefone?: string
+}
+
+function enviarEmail({nome, email, telefone}: Usuario ){
+    console.log(`Olá ${nome}, seu email é ${email} e seu telefone é ${telefone}`);
+};
+
+// Qual é o objeto/atributo que estamos passando
+enviarEmail({
+    email: "dani@dani.com.br",
+    nome: "Dani",
+    telefone: "11112222"
+});

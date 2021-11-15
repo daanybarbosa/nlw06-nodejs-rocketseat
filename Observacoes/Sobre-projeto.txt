@@ -1,0 +1,32 @@
+NLW VALORIZA
+
+- Cadastro de usuários
+
+- Cadastro de Tags (elogios possiveis)
+    - Somente usuario administrador
+
+- Cadastro de elogios
+    - ID do usuario - receber elogio
+    - ID do usuario - que está enviando o elogio 
+    - ID da Tag
+    - Data de criação
+
+- Autenticação de usuario
+    - Gerar token JWT (Json Web Token)
+    - Validar usuario logado nas rotas necessarias 
+
+- Listagem de usuarios
+- Listagem de Tags
+- Listagem de elogios por usuario 
+
+** Dependencias 
+
+APIs - Insomnia 
+Link: https://insomnia.rest/
+
+APIs - Postman
+https://www.postman.com/
+
+Beekeeper Studio - Gerenciador de Banco de Dados
+Link: https://www.beekeeperstudio.io/
+

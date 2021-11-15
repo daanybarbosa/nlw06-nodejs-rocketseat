@@ -1,0 +1,8 @@
+// No arquivo tsconfig.json
+
+// Trocar o strict de true para false 
+/* Type Checking */
+"strict": false
+
+
+

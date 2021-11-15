@@ -1,0 +1,41 @@
+// Aplicativo Insomnia
+
+- Create -> Request Collection -> <nome da collection> 
+Collection: NLW Nodejs Rocketseat
+
+**** ROTA POST ****
+- New request 
+    - Colocar o nome: primeira rota POST 
+    - Metodo: POST 
+    - Outras opçoes: No body 
+    -> Create 
+
+- POST 
+    - inserir a rota: localhost:3000/test-post 
+    -> Send 
+    - Ira aparecer a rota POST criada. 
+
+*******************************************************
+
+**** ROTA GET ****
+- New request 
+    - Colocar o nome: primeira rota GET 
+    - Metodo: GET
+    - Outras opçoes: No body 
+    -> Create 
+
+- GET
+    - inserir a rota: localhost:3000/test 
+    -> Send 
+    - Ira aparecer a rota GET criada. 
+
+*******************************************************
+
+**** Otimizar o Insomnia ****
+No Environment -> Manage Environments 
+
+    - modificar o arquivo e incluir o codigo:
+        {
+            "baseURL": "http://localhost:3000"
+        }
+    - Done

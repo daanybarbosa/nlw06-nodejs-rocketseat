@@ -1,0 +1,37 @@
+// instalar o package.json
+$ yarn init -y
+
+// instalar as dependencias do typescript (-D é a dependencia de desenvolvimento)
+$ yarn add typescript -D 
+
+// Inicializar o typescript
+$ yarn tsc --init 
+
+// Converter do Javascript para Typescript
+$ yarn tsc 
+
+// Para executar o arquivo 
+$ node <nome_do_arquivo>
+$ node index.ts 
+
+// Instalar o Express
+$ yarn add express
+
+// Bibliotecas de tipos -> @types/express 
+$ yarn add @types/express -D 
+
+// Testar a aplicação
+$ yarn tsc 
+
+// Instalar essa biblioteca para converter o Typescript para JS para o Node possa entender
+$ yarn add ts-node-dev -D
+
+// Adicionar no package.json o script de desenvolvimento 
+  "scripts": {
+    "dev": "ts-node-dev src/server.ts"
+  },
+
+// Testar a aplicaçao no modo desenvolvimento
+$ yarn dev 
+
+
