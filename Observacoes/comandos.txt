@@ -34,4 +34,27 @@ $ yarn add ts-node-dev -D
 // Testar a aplicaçao no modo desenvolvimento
 $ yarn dev 
 
+// Instalando as dependencias do banco de dados
+//Instalando o TypeORM e o bancso de dados SQLite
+$ yarn add typeorm reflect-metadata sqlite3
 
+//Configurando o Banco de Dados 
+- criaremos um arquivo json na raiz do projeto: ormconfig.json 
+- Sqlite cria os arquivos do banco em um arquivo database.sqlite
+
+//Inicializar a aplicaçao
+$ yarn dev 
+
+// Criar a entidade 
+$ yarn typeorm migration:create -n <nome_migrations>
+$ yarn typeorm migration:create -n CreateUsers 
+ - dentro desse arquivo criado, ira formular as tabelas 
+
+// Para criar a migration no banco de dados 
+$ yarn typeorm migration:run
+
+// Para remover a migration no banco de dados - reverter a ultima migration que fizemos 
+$ yarn typeorm migration:revert 
+
+// Criar a entity - nome da entidade: User 
+$ yarn typeorm entity:create -n User 

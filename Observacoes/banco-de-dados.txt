@@ -1,0 +1,84 @@
+***************************************************************************
+    BANCO DE DADOS 
+***************************************************************************
+
+Há 3 formas de se conectar ao banco de dados
+
+- Driver (exemplos: postgres, mariaDB, mongoDB)
+    - Link: https://node-postgres.com/
+    - nativo 
+    - sql mais puro (precisa ter conhecido de sql)
+
+    - desvantagem: 
+        - caso tenha a necessidade de mudar o banco de dados, por exemplo, do postgres para o mysql, pode 
+        resultar em grandes mudanças na aplicação, o driver do mysql pode se compartar de maneira diferente na aplicação, 
+        se tornando trabalhoso e talvez tendo a necessidade de alterar toda a estrutura do banco de dados. 
+
+- Query Builder (exemplo: KNEX.JS)
+    - Link: https://knexjs.org/
+    - Permite escrever as querys de uma forma menos trabalhosa.
+    - Permite se conectar com varios bancos, a estrutura do Knex é mais global. 
+
+- ORM - Object Relational Mapper (exemplos: Sequelize, TypeORM, Prisma)
+    - Frameworks que ajudam no mapeamento da entidade e o objeto.
+    - Ele ja cria um repositorio e automatiza o código de forma mais pratica 
+
+
+** Nesse projeto iremos utilizar o TypeORM e o banco de dados SQLite 
+
+***************************************************************************
+    MIGRATIONS 
+***************************************************************************
+- É um controle de versionamento de tabelas dentro da aplicaçao 
+- Assim todos os membros da equipe de dev terá acesso as alteraçoes dentro da aplicaçao
+
+- no arquivo ormconfig.js, adicionar o comando:
+  "cli": {
+        "migrationsDir": "src/database/migrations"
+    }
+
+- no arquivo package.json, adicionar o comando:
+      "scripts": {
+        "dev": "ts-node-dev src/server.ts",
+        "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+    },
+
+- para executar o banco de dados, no arquivo ormconfig.js, adicionar o comando:
+    "migrations": ["src/database/migrations/*.ts"], 
+
+- para executar o banco de dados:
+$ yarn typeorm migration:run
+
+- Para remover a migration no banco de dados - reverter a ultima migration que fizemos 
+$ yarn typeorm migration:revert 
+
+// Criar a entity 
+- no arquivo ormconfig.js, incluir o entitiesDir:
+    "cli": {
+        "migrationsDir": "src/database/migrations",
+        "entitiesDir": "src/entities"
+    }
+- Criar a entity - nome da entidade: User 
+$ yarn typeorm entity:create -n User 
+
+- No arquivo tsconfig.json, descomentar os comandos:
+    "experimentalDecorators": true,                
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false, //alterar de true para false 
+
+- Para gerar o id automaticamente
+$ yarn add uuid 
+$ yarn add @types/uuid
+
+
+***************************************************************************
+    REPOSITORIO
+***************************************************************************
+
+Entity (User) < - > ORM < - > BD 
+                 Repositorio
+                    
+- Repositorio é a camada que faz toda a comunicação entre a nossa entidade e o nosso banco de dados.
+    - É ele que vai fazer a busca, criação, remoção, e etc. 
+    - Ele vai ser responsavel por ter os metodos que vai fazer essa manipulação/comunicação com o banco de dados. 
+

@@ -30,3 +30,14 @@ https://www.postman.com/
 Beekeeper Studio - Gerenciador de Banco de Dados
 Link: https://www.beekeeperstudio.io/
 
+** Estrutura do Banco de Dados 
+
+    User                                                Compliments (Tabela dos elogios)                       Tag (Descrição dos Elogios)
+    - (PK) ID (uuid)                                    - (PK) ID (uuid)                                       - (PK) ID (uuid)
+    - name (varchar)       ------------->               - (FK) user_sender (uuid)      <-------------          - name (varchar)
+    - email (varchar)                                   - (FK) user_receiver (uuid)                            - created_at (Date)
+    - password (varchar)                                - (FK) tag_id (uuid)                                   - updated_at (Date)
+    - admin (boolean)                                   - message (varchar)
+    - created_at (Date)                                 - created_at (Date)
+    - updated_at (Date)
+

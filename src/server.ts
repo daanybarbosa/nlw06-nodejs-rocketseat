@@ -1,29 +1,19 @@
-const express = require('express')
+import "reflect-metadata";
+const express = require('express');
+
+import { router } from "./routes";
+
+import "./database";
 
 const app = express();
 
-/** Primeira rota
- * GET -> Buscar uma informação dentro da aplicação ou na API
- * POST -> Inserir (Criar) uma informação dentro da API 
- * PUT -> Alterar uma informação - dados do usuario, endereço, e etc
- * DELETE -> Remover uma informação/um dado.
- * PATCH -> Alterar uma informação especifica - alterar o avatar ou senha do usuario 
- * */ 
+// O express nao entende o json por padrao, 
+// entao, antes da criação das rotas, precisamos destacar o uso do json.
+app.use(express.json);
 
-// Primeira rota -> busca uma informação
-//get(recurso(rota), )
-app.get("/test", (request, response) => {
-    // Request -> Entrando
-    // Response -> Saindo
-    return response.send("Olá NLW");
-});
+//ira inserir as rotas dentro do Express
+app.use(router);
 
-// No Insomnia criar uma rota post e visualizar o retorno pelo: localhost:3000/test-post
-app.post("/test-post", (request, response) => {
-    return response.send("Olá NLW metodo POST")
-})
-
-//porta - http://localhost:3000
 app.listen(3000, () => {
     console.log("Server is running")
 });

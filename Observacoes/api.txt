@@ -1,0 +1,20 @@
+// Antes da API
+Site Ecommerce (HTML, CSS, JS)
+
+Backend 
+    - Regras de negocio
+    - Autenticacao de usuario
+    - Acesso ao BD 
+    - Dados criticos
+
+// Com a API 
+Cliente - Site    ----- Requisiçao/Rotas ---->      Recursos API
+    - HTML        <-------- Resposta ---------      - Rotas 
+    - CSS                                               http://nlwecommerce.com.br/<recursos>
+    - JS                                                http://nlwecommerce.com.br/produtos
+                                                        /produtos - GET (metodo de busca)    
+Server
+    Regra de negocio
+    Acesso ao BD
+    Autenticação de usuario
+    Dados criticos
