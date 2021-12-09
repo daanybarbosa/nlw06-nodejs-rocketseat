@@ -1,0 +1,16 @@
+* Excessoes - lançando uma excessão 
+
+Controller -> Service (throw new Error)
+ 
+ - Quando lançando uma excessão, estamos repassando essa excessão para camadas a cima, que no caso seria o Controller
+ - E o controller que faz a tratativa dessa excessão.
+
+ - duas formas de fazer essa tratativa:
+    1 - try/catch -> tratativa pelo controller
+        - colocar todo o nosso bloco por volta de um try/catch 
+    
+    2 - tratativa no server, sendo um middleware das nossas rotas 
+        server -> routes -> Controller -> Service (throw new Error) -> fluxo da aplicação
+
+* middlewares sao interceptadores dentro de uma requisicao, pode interroper ou continuar uma requisicao.
+    - é algo no meio da requisicao e da resposta 

@@ -56,5 +56,14 @@ $ yarn typeorm migration:run
 // Para remover a migration no banco de dados - reverter a ultima migration que fizemos 
 $ yarn typeorm migration:revert 
 
-// Criar a entity - nome da entidade: User 
+// Criar a entity - nome da entidade: User -> para criaçao das tabelas 
 $ yarn typeorm entity:create -n User 
+
+// Instalar a biblioteca para o express pegar os erros assincronos
+$ yarn add express-async-errors 
+
+// Criar a entity - nome da entidade: CreateTags -> para criaçao das tabelas 
+$ yarn typeorm migration:create -n CreateTags 
+
+// Para criar a migration no banco de dados 
+$ yarn typeorm migration:run
